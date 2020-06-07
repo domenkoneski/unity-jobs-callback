@@ -7,7 +7,7 @@ using static JobHelper;
 public class SimpleJobExample : MonoBehaviour {
     
     private NativeArray<float> result;
-    
+
     void ExtendedExample() {
         result = new NativeArray<float>(1, Allocator.Persistent);
 
@@ -55,8 +55,7 @@ public class SimpleJobExample : MonoBehaviour {
         });
     }
 
-    public struct SimpleJob : IJob, IJobDisposable
-    {
+    public struct SimpleJob : IJob, IJobDisposable {
         public NativeArray<float> result;
 
         public void Execute() {
