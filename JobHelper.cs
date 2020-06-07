@@ -154,7 +154,7 @@ public class JobHelper : MonoBehaviour {
         }
     }
 
-    JobExecution AddJob(IJobDisposable job, JobHandle handle, OnJobComplete onJobComplete, bool completeImmediatelly = false, string tag) {
+    JobExecution AddJob(IJobDisposable job, JobHandle handle, OnJobComplete onJobComplete, bool completeImmediatelly = false, string tag = null) {
         JobExecution execution = new JobExecution(job, handle, onJobComplete, completeImmediatelly, tag);
         this._scheduledJobs.Add(execution);
         if (DebugLog) {
