@@ -120,7 +120,7 @@ public class JobHelper : MonoBehaviour {
             execution.Duration += Time.unscaledDeltaTime;
         }
 
-        for (int i = this._completedJobs.Count; i >= 0; i--) {
+        for (int i = this._completedJobs.Count - 1; i >= 0; i--) {
             JobExecution execution = this._completedJobs[i];
             if (execution.Disposed) {
                 this._completedJobs.RemoveAt(i);
