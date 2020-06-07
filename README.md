@@ -29,7 +29,7 @@ SimpleJob job = new SimpleJob() {
     result = result
 };
 
-JobExecution execution = JobHelper.AddScheduledJob(job, job.Schedule(), (jobExecutor) => {
+JobHelper.AddScheduledJob(job, job.Schedule(), (jobExecutor) => {
     Debug.LogFormat("Job has completed in {0}s and {1} frames!", jobExecutor.Duration, jobExecutor.FramesTaken);
 
     // Result is available. LateUpdate() context.
