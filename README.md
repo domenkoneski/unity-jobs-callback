@@ -21,6 +21,8 @@ public struct SimpleJob : IJob, IJobDisposable {
     }
 }
 ```
+`OnDispose()` gets called `OnDestroy()`, e.g. closing the game. Make sure to dispose Persistent type allocations here. You can also call `executor.Dispose()` to manually dispose anything disposable.
+
 3. Create an instance of your _Job_ and schedule it with _JobHelper_.
 ```csharp
 NativeArray<float> result = new NativeArray<float>(1, Allocator.Persistent);
